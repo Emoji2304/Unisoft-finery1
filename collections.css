@@ -1,0 +1,251 @@
+/* Collections.css — responsive updates added */
+
+/* Reset / base */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #333;
+    background: url(https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8amV3ZWxyeXxlbnwwfHwwfHx8MA%3D%3D) ;
+    background-size: cover;
+    margin: 30px;
+    color: rgba(255, 217, 0, 0.852);
+}
+
+/* Ensure any images are fluid */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Navigation layout */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* Logo box */
+.logo {
+    background-color: #444;
+    width: 220px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 0 #5f5f5f, 0 2px 3px rgba(0, 0, 0, 0.5);
+    font-style: italic;
+    font-size: 15px;
+}
+
+/* Link group */
+.link {
+    background-color: #555;
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    border-radius: 6px;
+}
+
+.link a {
+    color: wheat;
+    padding: 8px 10px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.link a:hover {
+    color: #e2c07d;
+    font-size: 15px;
+}
+
+/* Page content wrapper (avoid using .body as tag selector confusion) */
+.body {
+    background-color: rgba(51, 51, 51, 0.85);
+    padding: 10px;
+    margin-top: 12px;
+    border-radius: 6px;
+    border: 2px solid #e2c07d;
+}
+
+/* quote style */
+.quote {
+    font-size: 1.1rem;
+    color: #e2c07d;
+    text-align: right;
+}
+
+/* Title block */
+.til {
+    display: flex;
+    justify-content: center;
+}
+
+.til h1 {
+    text-align: center;
+    margin: 30px 0;
+    width: 80%;
+    border: 2px solid #e2c07d;
+    background-color: #333;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 1.4rem;
+}
+
+/* Cards container */
+.cardcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Card styles */
+.cardpro {
+    background-color: #444;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #e2c07d;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* Responsive sizing using flex-basis */
+    flex: 1 1 calc(25% - 24px); /* 4 per row on wide screens */
+    max-width: calc(25% - 24px);
+    min-width: 220px;
+}
+
+.cardpro img {
+    width: 100%;
+    height: 400px;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.cardpro h3 {
+    font-size: 1rem;
+    margin: 6px 0;
+}
+
+.cardpro p {
+    font-size: 0.95rem;
+    margin: 6px 0;
+}
+
+.cardpro .price {
+    font-weight: 700;
+    color: #ffd966;
+}
+
+/* card button */
+.cardpro a {
+    display: inline-block;
+    color: #111;
+    background-color: #e2c07d;
+    text-decoration: none;
+    font-size: 0.9em;
+    border: 1px solid #e2c07d;
+    padding: 8px 15px;
+    letter-spacing: 1px;
+    transition: background-color 0.25s, color 0.25s;
+    border-radius: 4px;
+}
+
+.cardpro a:hover {
+    background-color: #d8b86a;
+    color: #111;
+}
+
+/* Detail button */
+.detail {
+    display: inline-block;
+    width: 100%;
+    padding: 8px 12px;
+    margin: 10px auto 40px;
+    background-color: #444;
+    border: 3px inset #e2c07d;
+    border-radius: 6px;
+}
+
+.detail a {
+    font-size: 18px;
+    color: wheat;
+    text-decoration: none;
+}
+
+/* Footer link group */
+.link2 {
+    background-color: #555;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.link2 a {
+    color: wheat;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+.link2 a:hover {
+    color: #e2c07d;
+    font-size: 15px;
+}
+
+/* Responsive breakpoints */
+
+/* Large screens -> keep 4 columns (already default) */
+
+/* Medium screens: 2 columns */
+@media (max-width: 1100px) {
+    .cardpro {
+        flex: 1 1 calc(33.333% - 24px);
+        max-width: calc(33.333% - 24px);
+    }
+    .til h1 { width: 70%; }
+}
+
+/* Small tablets / landscape phones: 2 columns */
+@media (max-width: 820px) {
+    body { margin: 18px; }
+    .cardpro {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+        min-width: 200px;
+    }
+    .logo { width: 180px; }
+    .link { padding: 6px; gap: 6px; }
+    .til h1 { width: 90%; font-size: 1.2rem; margin-left: 0; }
+}
+
+/* Small phones: single column */
+@media (max-width: 480px) {
+    body { margin: 10px; }
+    nav { align-items: flex-start; }
+    .logo { width: 100%; text-align: center; padding: 12px; }
+    .link { width: 100%; justify-content: center; }
+    .cardpro {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .til h1 { width: 100%; font-size: 1.1rem; padding: 6px; }
+    .detail { width: 100%; }
+    .quote { font-size: 0.95rem; }
+}

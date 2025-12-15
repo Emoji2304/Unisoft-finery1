@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us — UniSoft Finery</title>
+  <link rel="stylesheet" href="unisoft.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+  <nav>
+    <div class="logo"><h1>UniSoft Finery</h1></div>
+    <div class="link">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="jewelries.html">Jewelries</a>
+      <a href="collections.html">Collections</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main class="container" style="padding:28px 16px;">
+    <section style="max-width:900px;margin:0 auto;">
+      <h1>Contact Us</h1>
+      <p class="short-desc">Have a question, a custom request or need help with an order? Send us a message:</p>
+
+      <!--
+        Replace {your_form_id} below with the ID Formspree gives you, e.g.:
+        action="https://formspree.io/f/mnqlkzab"
+      -->
+      <form id="contact-form" class="contact-form" action="https://formspree.io/f/{xvgenrog}" method="POST" novalidate>
+        <div class="fields" aria-label="Contact fields">
+          <label>
+            Your name
+            <input type="text" name="name" placeholder="Full name" required aria-required="true">
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="_replyto" placeholder="you@example.com" required aria-required="true">
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="6" placeholder="Tell us about your request..." required aria-required="true"></textarea>
+          </label>
+
+          <!-- Honeypot for bots — keep name "_gotcha" for Formspree to detect spam submissions -->
+          <label style="display:none;">
+            Don't fill this out if you're human:
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </label>
+
+          <!-- Optional: subject for your inbox -->
+          <input type="hidden" name="_subject" value="New contact message from UniSoft website">
+        </div>
+
+        <div class="contact-info" aria-label="Contact actions">
+          <p>Prefer immediate help? <a href="https://wa.link/6c378a" target="_blank" rel="noopener">Open WhatsApp chat</a></p>
+          <p style="margin-top:4px;color:#e9d9a5;">We will reply during business hours (Mon–Fri).</p>
+          <button type="submit" class="buy-btn" aria-label="Send message">Send message</button>
+          <!-- status will be appended by main.js -->
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="link2">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="jewelries.html">Jewelries</a>
+      <a href="collections.html">Collections</a>
+      <a href="contact.html">Contact</a>
+      <div style="margin-top:8px;color:#ccc;font-size:0.9rem;">
+        © <span class="placeholder-year"></span> UniSoft Finery
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

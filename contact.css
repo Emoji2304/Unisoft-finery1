@@ -1,0 +1,126 @@
+/* contact.css — responsive styles for Contact page
+   Use together with unisoft.css (base layout + nav)
+*/
+
+:root{
+  --accent: #e2c07d;
+  --muted: #ffeaa7;
+  --panel-bg: rgba(51,51,51,0.85);
+  background: url(https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8amV3ZWxyeXxlbnwwfHwwfHx8MA%3D%3D);
+}
+
+/* Center wrapper for contact area */
+main.container {
+  max-width: 900px;
+  margin: 28px auto;
+  padding: 22px;
+}
+
+/* Form card */
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 20px;
+  background: var(--panel-bg);
+  padding: 18px;
+  border-radius: 8px;
+  border: 2px solid var(--accent);
+  color: var(--muted);
+  align-items: start;
+}
+
+/* Left column fields (labels stacked) */
+.contact-form .fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* When HTML markup doesn't have wrapper, fall back to default layout */
+.contact-form > label {
+  display: block;
+}
+
+/* Inputs */
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #222;
+  color: #fff;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Right column: quick contact / info or submit area */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Submit button */
+.contact-form .buy-btn {
+  background: var(--accent);
+  color: #111;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 160px;
+}
+
+/* status message */
+.contact-status { font-size: 0.95rem; color: var(--accent); }
+
+/* Small helper text */
+.contact-form p { margin: 0; color: #e9d9a5; font-size: 0.95rem; }
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Medium screens: reduce two-column form to 1fr 300px */
+@media (max-width: 1100px) {
+  .contact-form {
+    grid-template-columns: 1fr 300px;
+    gap: 16px;
+  }
+  .contact-form .buy-btn { width: 140px; }
+}
+
+/* Tablet / mobile narrow screens: stack form vertically */
+@media (max-width: 820px) {
+  body { margin: 18px; }
+  .contact-form {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .contact-info {
+    order: 2;
+    width: 100%;
+  }
+  .contact-form .buy-btn {
+    width: 100%;
+    align-self: stretch;
+  }
+  .contact-form input,
+  .contact-form textarea { font-size: 0.98rem; }
+  /* tighten padding */
+  main.container { padding: 14px; }
+}
+
+/* Mobile phones: compact and accessible */
+@media (max-width: 480px) {
+  body { margin: 10px; }
+  main.container { padding: 10px; }
+  .contact-form { padding: 12px; border-radius: 6px; }
+  .contact-form input,
+  .contact-form textarea { font-size: 0.95rem; padding: 10px; }
+  .contact-form label { font-size: 0.95rem; color: #ffeaa7; }
+  .contact-form .buy-btn { font-size: 1rem; padding: 10px; }
+  .contact-status { font-size: 0.95rem; }
+  /* Make small inline helper links wrap nicely */
+  .contact-form p a { color: var(--accent); word-break: break-word; }
+}
